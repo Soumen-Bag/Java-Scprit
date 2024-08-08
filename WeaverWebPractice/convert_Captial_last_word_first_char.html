@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input type="text" placeholder="Enter the text" id="inputText"><br>
+    <button onclick="convertUpperCase()">Convert</button>
+    <p id="result"></p>
+    <script>
+      const convertUpperCase = () => {
+        const input = document.getElementById("inputText").value;
+        const result = document.getElementById("result");
+
+        const capitslize = (str) => {
+          const words = str.split(' ');
+          const lastWordIndex = words.length - 1;
+          words[lastWordIndex] = words[lastWordIndex].charAt(0).toUpperCase()+words[lastWordIndex].slice(1)
+          return words.join(' ');
+        }
+        const outputText = capitslize(input);
+        result.innerText=outputText
+
+      }
+    </script>
+  </div>
+</body>
+
+</html>

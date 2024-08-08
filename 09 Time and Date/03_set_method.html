@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set method</title>
+</head>
+<body>
+    <p>Click the button to display a date after changing</p>
+
+    <button onclick="myFuntion()">Try it</button>
+    <p id ="demo"></p>
+    <p id="time"></p>
+    <p id="date"></p>
+    <p id="dateTime"></p>
+
+    <script>
+        function myFuntion()
+        {
+            var t= new Date();
+            t.setHours(5);
+            document.getElementById("demo").innerHTML=t
+        }
+
+        //get time
+        (function(){
+            setInterval(()=>{
+                var d=new Date().toLocaleTimeString();
+                document.getElementById("time").innerHTML=d;
+            },1000)
+        })();
+
+        //get date
+        (function(){
+            setInterval(()=>{
+                var d=new Date().toLocaleDateString();
+                document.getElementById("date").innerHTML=d;
+            },1000)
+        })();
+
+        //get date and time
+        (function(){
+            setInterval(()=>{
+                var dt=new Date().toLocaleString();
+                document.getElementById("dateTime").innerHTML=dt;
+            },1000)
+        })();
+
+    </script>
+</body>
+</html>
